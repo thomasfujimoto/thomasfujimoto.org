@@ -5,55 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thomas Fujimoto</title>
     <style>
+      /* Reset some default styles for better consistency */
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: white;
+        color: black;
+        font-family: "Lato", sans-serif;
+      }
+
       .user-profile {
-        width: 275px;
-        border-radius: 150px;
-        margin-right: 100px;
+        width: 500px;
+        border-radius: 10px;
+        margin-right: 20px;
+        margin-left: 200px;
         float: left;
       }
 
-      body {
-        background-color: white;
-        color: black;
-        font-family: "Courier New", Courier, monospace;
-      }
-      .pos_cen {
-        position: relative;
-        top: 75px;
-        margin-left: 100px;
-        margin-right: 100px;
+      .user-profile-image {
+        width: 100%;
+        border-radius: 10px;
       }
 
-      .h1 {
-        position: relative;
-        font-size: 50px;
-        font-weight: bold;
-        bottom: 0px;
+      .text-container {
+        margin-right: 100px;
+        margin-top: 145px;
       }
-      .text_pos {
-        position: relative;
+
+      .intro {
+        font-size: 50px;
+        line-height: 1.5;
+        margin-top: 10px;
+        margin-right: 250px;
       }
     </style>
   </head>
+
   <body>
-    <div class="pos_cen">
+    <div class="user-profile-image">
       <img
-        src="images/profile.JPEG"
+        src="images\profile.jpeg"
         alt="my profile picture"
         class="user-profile"
       />
+    </div>
 
-      <p class="h1">About Me</p>
-      <p class="text_pos">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti vero
-        ea laborum fugit deserunt laboriosam maxime eius exercitationem adipisci
-        dignissimos! Aut doloremque harum ut nobis fuga minima, reprehenderit
-        velit ipsa corporis omnis illo non rem quas accusamus a, ipsum quam
-        eligendi. Sunt voluptates quod ea provident, repellendus expedita.
-        Eveniet maiores eius ratione sapiente veritatis suscipit. Dolore officia
-        aspernatur est quis modi voluptatum dicta pariatur provident beatae
-        ducimus consequuntur quo, accusantium vitae perspiciatis atque aliquid
-        ex ipsum molestiae eaque.
+    <!-- Introduction-->
+    <div class="intro">
+      <p>&#128075; &#x1F44B;</p>
+      <p style="font-size: 50px; font-weight: bold">
+        Hello! My name is Thomas Fujimoto
+      </p>
+      <p style="font-size: 50px">
+        I am a 3rd year Computer Engineering Student at the University of
+        California Santa Cruz!
       </p>
     </div>
   </body>
