@@ -479,7 +479,7 @@ body.offcanvas {
   border: none; }
 
 .panel-heading a:after {
-  font-family: "icomoon";
+  font-family: "Quicksand";
   content: "\e115";
   position: absolute;
   right: 20px;
