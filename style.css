@@ -5,7 +5,7 @@
   }
   
   body {
-    background-color: #000;
+    background: radial-gradient(circle at top center, #001f33 0%, #000000 100%);
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
@@ -103,9 +103,50 @@
     50% { border-color: transparent }
   }
 
-  /* Ahout Me */
-  html {
-    scroll-behavior: smooth;
+  /* About Me */
+  #about {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+    color: #00aaff;
+  }
+  
+  .about-text {
+    max-width: 850px;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #e0f7ff;
+    margin-bottom: 1.2rem;
   }
 
+  .about-card {
+    background-color: rgba(0, 170, 255, 0.08); /* subtle blue tint */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.15);
+    max-width: 700px;
+    border: 1px solid #00aaff;
+  }
   
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.25s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
