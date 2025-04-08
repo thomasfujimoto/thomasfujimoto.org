@@ -1,3 +1,6 @@
+/* ----------------------------
+   Global Styles
+----------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +15,9 @@
     min-height: 100vh;
   }
   
+  /* ----------------------------
+     Header
+  ----------------------------- */
   header {
     background-color: #00aaff;
     padding: 1rem;
@@ -30,15 +36,17 @@
     margin-left: 0.5rem;
   }
   
+  /* ----------------------------
+     Landing Section
+  ----------------------------- */
   main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
     padding: 0 1rem;
-    text-align: center;
-    overflow: hidden; 
+    overflow: hidden;
   }
   
   .icons a {
@@ -53,7 +61,7 @@
   }
   
   h1 {
-    margin-top: 0em;
+    margin-top: 0;
     font-size: 5rem;
   }
   
@@ -63,57 +71,68 @@
   }
   
   @keyframes wave {
-    0% { transform: rotate(0deg); }
+    0%, 50%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(20deg); }
-    50% { transform: rotate(0deg); }
     75% { transform: rotate(-20deg); }
-    100% { transform: rotate(0deg); }
   }
-
   
   .name {
     color: #00aaff;
     font-weight: bold;
   }
   
-  h2 {
-    margin-top: 0.5rem;
-    font-size: 3.0rem;
-    color: #cceeff;
-  }
-
+  h2,
   .typing {
+    margin-top: 0.5rem;
     font-size: 3rem;
-    font-weight: 600;
     color: #cceeff;
+    font-weight: 600;
+  }
+  
+  .typing {
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #cceeff;
     width: 0;
     animation: typing 3s steps(28, end) forwards, blink 0.7s step-end infinite;
-    margin-top: 1rem;
   }
   
   @keyframes typing {
     from { width: 0 }
-    to { width: 22ch } /* Adjust to match character length */
+    to { width: 22ch }
   }
   
   @keyframes blink {
     50% { border-color: transparent }
   }
-
-  /* About Me */
-  #about {
-    height: 100vh;
+  
+  /* ----------------------------
+     About + Skills Container
+  ----------------------------- */
+  #about-skills-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    padding: 0 1.5rem;
-    text-align: center;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    min-height: 100vh; /* This makes it take up the whole screen */
+    text-align: left;
   }
   
+  .about-card,
+  .skills-card {
+    flex: 1;
+    max-width: 850px;
+    padding: 0 2rem;
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+  
+  /* ----------------------------
+     About Section
+  ----------------------------- */
   h3 {
     font-size: 2.4rem;
     margin-bottom: 1.2rem;
@@ -121,22 +140,139 @@
   }
   
   .about-text {
-    max-width: 850px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.8;
     color: #e0f7ff;
     margin-bottom: 1.2rem;
-  }
-
-  .about-card {
-    background-color: rgba(0, 170, 255, 0.08); /* subtle blue tint */
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 25px rgba(0, 170, 255, 0.15);
-    max-width: 700px;
-    border: 1px solid #00aaff;
+    max-width: 850px;
   }
   
+  /* ----------------------------
+     Skills Section
+  ----------------------------- */
+  .skills-list {
+    margin-top: 1rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .skill-category {
+    flex: 1 1 250px;
+    margin: 1rem;
+    text-align: left;
+  }
+  
+  .skill-category h4 {
+    font-size: 1.25rem;
+    color: #00aaff;
+    margin-bottom: 0.8rem;
+  }
+  
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-category li {
+    font-size: 1.25rem;
+    margin: 0.4rem 0;
+  }
+  
+  /* ----------------------------
+     Projects
+  ----------------------------- */
+  #projects {
+    padding: 6rem 2rem;
+    min-height: 100vh; /* also takes up one full screen */
+    text-align: center;
+  }
+  
+  /* Grid container */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+  
+  /* Flip card base */
+  .flip-card {
+    perspective: 1000px;
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Flip animation core */
+  .flip-card-inner {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* keeps it square */
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    position: relative;
+  }
+  
+  /* Flip on click */
+  .flip-card input:checked + .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Front & Back setup */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 170, 255, 0.05);
+    border: 1px solid #00aaff22;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.1);
+  }
+  
+  /* Image on the front */
+  .flip-card-front img {
+    width: 100%;
+    height: 60%;  
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  
+  /* Flip side */
+  .flip-card-back {
+    transform: rotateY(180deg);
+    background-color: rgba(0, 170, 255, 0.08);
+  }
+  
+  /* Text styles */
+  .flip-card-front h4,
+  .flip-card-back h4 {
+    font-size: 1.2rem;
+    color: #00cfff;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .flip-card-back p {
+    font-size: 0.95rem;
+    color: #d4f3ff;
+    text-align: center;
+    line-height: 1.4;
+  }
+    
+  /* ----------------------------
+     Animations
+  ----------------------------- */
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -150,3 +286,20 @@
       transform: translateY(0);
     }
   }
+  
+  /* ----------------------------
+     Responsive Design
+  ----------------------------- */
+  @media (max-width: 768px) {
+    .about-card,
+    .skills-card {
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+  
+    .skills-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
